@@ -134,20 +134,25 @@ main:has(#totalProd:target) > #totalProdT
     left: 0;
     right: 0;
     background: rgba(0, 0, 0, 0.7);
-    transition: opacity 0.1;
+    transition: opacity 300ms;
     visibility: hidden;
     opacity: 0;
     background-color: rgba(0, 0, 0, 0.305);
     backdrop-filter: blur(10px);
 }
 
-#buzo1:checked ~ #pbuzo1{
+#buzo1:checked ~ #pbuzo1,
+#buzo2:checked ~ #pbuzo2,
+#buzo3:checked ~ #pbuzo3,
+#buzo4:checked ~ #pbuzo4,
+#buzo5:checked ~ #pbuzo5
+{
     visibility: visible;
     opacity: 1;
 }
 
 #popupBody{
-    width: 90%;
+    width: 60%;
     height: 92%;
     padding: 20px;
     padding-top: 20px;
@@ -175,7 +180,8 @@ main:has(#totalProd:target) > #totalProdT
     /* border: 2px solid black; */
     display: grid;
     grid-template-columns: 60% 40%;
-    grid-template-rows: 60% 40%;
+    grid-template-rows: 70% 30%;
+    overflow: hidden;
 }
 .imgProd{
     display: grid;
@@ -185,30 +191,119 @@ main:has(#totalProd:target) > #totalProdT
     'thumbs main'
     'thumbs main'
     'thumbs main';
-    grid-template-columns:40% 60%;
-    grid-template-rows:repeat(5,20%)  ;
+    grid-template-columns:20% 80%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
     align-items: center;
-}
-.imgProd img{
-    object-fit:scale-down;
-    width: 100%;
     height: 100%;
-    grid-area: main;
+    width: 100%;
+    overflow: hidden;
+    /* border: 2px solid black; */
 }
+
 .imgThumb{
     grid-area: thumbs;
-    display: flex;
-    flex-direction: column;
+    grid-row: auto;
+    /* display: flex;
+    flex-direction: column; */
     gap: 1rem;
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 100%;
-}
-.imgThumb img{
     height: 100%;
-    object-fit: fill;
-    width: 100%;
+    object-fit: scale-down;
 }
 .imgMain{
     grid-area: main;
-    grid-row: 2;
+    grid-row: 1 /span 5;
+    object-fit: scale-down;
+    width: 100%;
+    height: 100%;
+}
+.imgProd:has(.imgThumb.p1:hover) > .imgMain{
+    content: var(--p1);}
+.imgProd:has(.imgThumb.p2:hover) > .imgMain{
+    content: var(--p2);}
+.imgProd:has(.imgThumb.p3:hover) > .imgMain{
+    content: var(--p3);}
+.imgProd:has(.imgThumb.p4:hover) > .imgMain{
+    content: var(--p4);}
+.imgProd:has(.imgThumb.p5:hover) > .imgMain{
+    content: var(--p5);
+}
+.imgMain{
+    content: url(../images/buzo1main.jpg);
+}
+.tabla{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    gap: 1rem;
+    grid-column: 1/span 2;
+    justify-items: space-between;
+    border: 2px black solid;
+    padding: 1rem;
+}
+.tabla *{
+    font-size: 0.8rem;
+}
+.general{
+    display: flex;
+    /* grid-template-rows: 25% 25% 25% 25%; */
+    flex-direction: column;
+
+    padding: 10%;
+}
+.botonComp{
+    height: fit-content;
+    width: fit-content;
+    padding: 5%;
+}
+.tallas{
+    display: flex;
+    gap: 1rem;
+    height: fit-content;
+}
+.talla{
+    border: 1px black solid;
+    border-radius: 100px;
+    width: 1.5rem;
+    text-align: center;
+}
+.talla:hover{
+    background-color: rgba(0, 0, 0, 0.274);
+}
+@media (max-width:425px) {
+    .imgProd{
+        grid-template-areas: 
+        'thumbs thumbs thumbs thumbs thumbs'
+        'main main main main main';
+        grid-template-columns:20% 20% 20% 20% 20%;
+        grid-template-rows: 20% 80%;
+    }
+    .imgMain{
+        grid-column:main/span 5 ;
+        grid-row: main/main;
+    }
+    .imgThumb{
+        grid-row: unset;
+        grid-column: auto;
+        width: 100%;
+    }
+    .popupContent{
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 25% 25%;
+    }
+    .general{
+        grid-row: 2;
+        font-size: 0.7rem;
+    }
+    .tabla *{
+        font-size: 0.7rem;
+    }
+    .tabla{
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+    }
+    .popupBody{
+        height: max-content;
+    }
 }
