@@ -227,19 +227,54 @@ main:has(#totalProd:target) > #totalProdT
     object-fit: scale-down;
     width: 100%;
     height: 100%;
+    transition: 1s;
 }
 .imgProd:has(.imgThumb.p1:hover) > .imgMain{
-    content: var(--p1);}
+    animation: swap 1s 1;
+    content: var(--p1);
+}
 .imgProd:has(.imgThumb.p2:hover) > .imgMain{
+    animation: swap1 1s 1;
     content: var(--p2);}
 .imgProd:has(.imgThumb.p3:hover) > .imgMain{
+    animation: swap2 1s 1;
     content: var(--p3);}
 .imgProd:has(.imgThumb.p4:hover) > .imgMain{
+    animation: swap3 1s 1;
     content: var(--p4);}
 .imgProd:has(.imgThumb.p5:hover) > .imgMain{
+    animation: swap4 1s 1;
     content: var(--p5);
 }
-
+@keyframes swap{
+    0%{opacity: 0;}
+    /* 50%{opacity: 0;} */
+    100%{opacity: 1;}
+}
+@keyframes swap1{
+    0%{
+        /* opacity: 0; */
+        scale: 0;
+    }
+    /* 50%{opacity: 0;} */
+    100%{opacity: 1;}
+}
+@keyframes swap2{
+    0%{transform: translateY(-100%);}
+    /* 50%{opacity: 0;} */
+    100%{opacity: 1;}
+}
+@keyframes swap3{
+    0%{transform: translateX(200%);}
+    /* 50%{opacity: 0;} */
+    100%{opacity: 1;}
+}
+@keyframes swap4{
+    0%{transform:rotate(-1turn) scale(0);
+    }
+    /* 50%{opacity: 0;} */
+    100%{opacity: 1;}
+}
 .tabla{
     display: grid;
     grid-template-columns: 33% 33% 33%;
