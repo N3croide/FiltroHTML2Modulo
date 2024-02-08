@@ -60,7 +60,7 @@ main .data .content-data .producto .desc{
 main .data .content-data .producto .desc .nombreP{
     grid-area: titulo;
     margin: 0 auto;
-    font-size: 1rem;
+    font-size: 0.7rem;
 }
 main .data .content-data .producto .desc .precio{
     margin: 0 auto;
@@ -73,7 +73,7 @@ main .data .content-data .producto .desc .botonC{
     border-radius: 20px;
     text-align: center;
     transition: 300ms;
-    font-size: 1rem;
+    font-size: 0.7rem;
     cursor: pointer;
 }
 main .data .content-data .producto .desc .botonC:hover{
@@ -145,7 +145,17 @@ main:has(#totalProd:target) > #totalProdT
 #buzo2:checked ~ #pbuzo2,
 #buzo3:checked ~ #pbuzo3,
 #buzo4:checked ~ #pbuzo4,
-#buzo5:checked ~ #pbuzo5
+#buzo5:checked ~ #pbuzo5,
+#camisa1:checked ~ #pcamisa1,
+#camisa2:checked ~ #pcamisa2,
+#camisa3:checked ~ #pcamisa3,
+#camisa4:checked ~ #pcamisa4,
+#camisa5:checked ~ #pcamisa5,
+#pantalon1:checked ~ #ppantalon1,
+#pantalon2:checked ~ #ppantalon2,
+#pantalon3:checked ~ #ppantalon3,
+#pantalon4:checked ~ #ppantalon4,
+#pantalon5:checked ~ #ppantalon5
 {
     visibility: visible;
     opacity: 1;
@@ -229,16 +239,14 @@ main:has(#totalProd:target) > #totalProdT
 .imgProd:has(.imgThumb.p5:hover) > .imgMain{
     content: var(--p5);
 }
-.imgMain{
-    content: url(../images/buzo1main.jpg);
-}
+
 .tabla{
     display: grid;
     grid-template-columns: 33% 33% 33%;
     gap: 1rem;
     grid-column: 1/span 2;
     justify-items: space-between;
-    border: 2px black solid;
+    /* border: 2px black solid; */
     padding: 1rem;
 }
 .tabla *{
