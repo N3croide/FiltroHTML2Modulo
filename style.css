@@ -328,8 +328,9 @@ nav .profile .profile-link a:hover {
 
 /* MAIN */
 main {
-	width: 100%;
+	width: 95%;
 	padding: 24px 20px 20px 20px;
+    margin-top: 0%;
 }
 main .title {
 	font-size: 28px;
@@ -410,7 +411,6 @@ main .card .label {
 main .data {
 	display: flex;
 	grid-gap: 20px;
-	margin-top: 20px;
 	flex-wrap: wrap;
 }
 main .data .content-data {
@@ -421,16 +421,18 @@ main .data .content-data {
 	border-radius: 10px;
 	box-shadow: 4px 4px 16px rgba(0, 0, 0, .1);
 }
-main .content-data .head {
+ main .content-data .head {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 24px;
 }
+
 main .content-data .head h3 {
 	font-size: 20px;
 	font-weight: 600;
 }
+/*
 main .content-data .head .menu {
 	position: relative;
 	display: flex;
@@ -477,7 +479,7 @@ main .content-data .chart {
 }
 main .content-data .chart::-webkit-scrollbar {
 	display: none;
-}
+} */
 
 main .chat-box {
 	width: 100%;
@@ -579,10 +581,6 @@ main .btn-send:hover {
 }
 /* MAIN */
 /* CONTENT */
-
-
-
-
 
 
 @media screen and (max-width: 768px) {

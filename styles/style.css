@@ -1,0 +1,125 @@
+.content-data{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+    grid-template-rows: auto;
+    gap: 1rem;
+}
+main .data .content-data .producto{
+    /* border: 1px black solid; */
+    box-shadow:rgba(0, 0, 0, 0.247) 0px 0px 10px 2px;
+    display: grid;
+    grid-template-areas:
+    'imgm imgm'
+    'desc desc';
+    gap: 0.2rem;
+    grid-template-rows: 80% 20%;
+    border-radius: 30px;
+    overflow: hidden;
+    transition: 300ms;
+}
+main .data .content-data .producto:hover{
+    transform:scale(1.05);
+    z-index: 1;
+}
+main .data .content-data .producto .thumb{
+    grid-area: thumbs;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    overflow: hidden;
+}
+main .data .content-data .producto .thumb img{
+    width: auto;
+    height: auto;
+}
+
+main .data .content-data .producto .imgm{
+    grid-area: imgm;
+    gap: 0.2rem;
+    border-radius: 20px;
+    overflow: hidden;
+}
+main .data .content-data .producto .imgm img{
+    width: 100%;
+    height: 100%;
+    
+}
+main .data .content-data .producto .desc{
+    grid-area: desc;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: grid;
+    grid-template-areas: 
+    'titulo titulo'
+    'precio boton';    
+    grid-template-rows: 60% 40%;
+    padding: 1rem;
+}
+main .data .content-data .producto .desc .nombreP{
+    grid-area: titulo;
+    margin: 0 auto;
+    font-size: 1rem;
+}
+main .data .content-data .producto .desc .precio{
+    margin: 0 auto;
+    grid-area: precio;
+    font-size: 1rem;
+}
+main .data .content-data .producto .desc .botonC{
+    grid-area: boton;
+    border: 2px black solid;
+    border-radius: 20px;
+    text-align: center;
+    transition: 300ms;
+    font-size: 1rem;
+}
+main .data .content-data .producto .desc .botonC:hover{
+    transform: scale(1.1);
+    background-color: rgba(43, 43, 238, 0.301);
+}
+#abrigos{
+    display:none;
+}
+#pantalones{
+    display: none;
+}
+#camisas{
+    display: none;
+}
+#abrigosT{
+    display:none;
+}
+#pantalonesT{
+    display: none;
+}
+#camisasT{
+    display: none;
+}
+#totalProdT{
+    display: none;
+}
+#abrigos:target ~ #totalProd,
+#camisas:target ~ #totalProd,
+#pantalones:target ~ #totalProd
+{
+    display: none;
+}
+#abrigos:target,
+#camisas:target,
+#pantalones:target
+{
+    display: grid;
+}
+main:has(#camisas:target) > #camisasT,
+main:has(#abrigos:target) > #abrigosT,
+main:has(#pantalones:target) > #pantalonesT,
+main:has(#totalProd:target) > #totalProdT
+{
+    display: unset;
+}
+#sidebar .side-menu li a .icon{
+    font-size: 2rem;
+}
+
